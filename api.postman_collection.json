@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "62dfd4a8-ab99-4d03-9aef-92b97229a080",
+		"name": "Concertful Scraper API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1372856"
+	},
+	"item": [
+		{
+			"name": "events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/events?location=spain/madrid&date=2022-08-01&genre=hard-rock-metal&order=event_date",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"events"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "spain/madrid"
+						},
+						{
+							"key": "date",
+							"value": "2022-08-01"
+						},
+						{
+							"key": "genre",
+							"value": "hard-rock-metal"
+						},
+						{
+							"key": "order",
+							"value": "event_date"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "event",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/events/524724",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"events",
+						"524724"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:6060",
+			"type": "string"
+		}
+	]
+}
