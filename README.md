@@ -1,4 +1,7 @@
 # concertful-scrapper-api
+## run
+```npm run dev```
+
 ## Data
 Scrapes data from [concertful](https://concertful.com/)
 
@@ -7,3 +10,9 @@ Scrapes data from [concertful](https://concertful.com/)
 
 ## getEvent
 /events/:id
+
+## TODO
+- [ ] Parse dates using [Day.js](https://day.js.org/)
+- [ ] Control genre values
+- [ ] Control order values
+- [ ] Return location GPS
