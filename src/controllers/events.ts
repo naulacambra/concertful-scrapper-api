@@ -1,6 +1,5 @@
 /** source/controllers/events.ts */
 import { Request, Response, NextFunction } from 'express';
-import axios, { AxiosResponse } from 'axios';
 import Event from '../models/Event';
 import ConcertfulService from '../services/concertful';
 
@@ -36,50 +35,4 @@ const getEvent = async (req: Request, res: Response, next: NextFunction) => {
     return res.status(200).json(event);
 };
 
-// updating a event
-const updateEvent = async (req: Request, res: Response, next: NextFunction) => {
-    // get the event id from the req.params
-    let id: string = req.params.id;
-    // get the data from req.body
-    let title: string = req.body.title ?? null;
-    let body: string = req.body.body ?? null;
-    // update the event
-    let response: AxiosResponse = await axios.put(`https://jsonplaceholder.typicode.com/events/${id}`, {
-        ...(title && { title }),
-        ...(body && { body })
-    });
-    // return response
-    return res.status(200).json({
-        message: response.data
-    });
-};
-
-// deleting a event
-const deleteEvent = async (req: Request, res: Response, next: NextFunction) => {
-    // get the event id from req.params
-    let id: string = req.params.id;
-    // delete the event
-    let response: AxiosResponse = await axios.delete(`https://jsonplaceholder.typicode.com/events/${id}`);
-    // return response
-    return res.status(200).json({
-        message: 'event deleted successfully'
-    });
-};
-
-// adding a event
-const addEvent = async (req: Request, res: Response, next: NextFunction) => {
-    // get the data from req.body
-    let title: string = req.body.title;
-    let body: string = req.body.body;
-    // add the event
-    let response: AxiosResponse = await axios.post(`https://jsonplaceholder.typicode.com/events`, {
-        title,
-        body
-    });
-    // return response
-    return res.status(200).json({
-        message: response.data
-    });
-};
-
-export default { getEvents, getEvent, updateEvent, deleteEvent, addEvent };
+export default { getEvents, getEvent };

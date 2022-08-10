@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get('/events', controller.getEvents);
 router.get('/events/:id', controller.getEvent);
-router.put('/events/:id', controller.updateEvent);
-router.delete('/events/:id', controller.deleteEvent);
-router.post('/events', controller.addEvent);
+// router.put('/events/:id', controller.updateEvent);
+// router.delete('/events/:id', controller.deleteEvent);
+// router.post('/events', controller.addEvent);
 
 export = router;
